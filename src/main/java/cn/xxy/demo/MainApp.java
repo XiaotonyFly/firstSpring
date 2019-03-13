@@ -1,6 +1,7 @@
 package cn.xxy.demo;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -11,5 +12,10 @@ public class MainApp {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         HelloWorld helloWorld = (HelloWorld) context.getBean("helloWorld");
         helloWorld.getMessage();
+        helloWorld.getMessageParent();
+        /*AbstractApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        HelloWorld helloWorld = (HelloWorld) context.getBean("helloWorld");
+        helloWorld.getMessage();
+        context.registerShutdownHook();*/
     }
 }
