@@ -17,12 +17,21 @@ public class Car {
         this.engine = engine;
     }
 
-    public Car(Wheel wheel) {
+    /*public Car(Wheel wheel) {
         this.wheel = wheel;
-    }
+    }*/
 
     public Car(Engine engine, Wheel wheel) {
         this.engine = engine;
+        this.wheel = wheel;
+    }
+
+    public Wheel getWheel() {
+        return wheel;
+    }
+
+    public void setWheel(Wheel wheel) {
+        System.out.println("set wheel");
         this.wheel = wheel;
     }
 
