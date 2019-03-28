@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="engine" class="cn.xxy.demo.di.Engine"/>
+    <bean id="wheel" class="cn.xxy.demo.di.Wheel"/>
+    <bean id="car" autowire="byName" class="cn.xxy.demo.di.Car"/>
+
+</beans>

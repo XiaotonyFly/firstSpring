@@ -1,4 +1,4 @@
-package cn.xxy.demo.di_constructor;
+package cn.xxy.demo.di;
 
 /**
  * Created by xuxiaoyu on 2019/3/18.

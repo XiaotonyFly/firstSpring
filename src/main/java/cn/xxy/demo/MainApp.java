@@ -1,8 +1,8 @@
 package cn.xxy.demo;
 
-import cn.xxy.demo.di_constructor.Car;
+import cn.xxy.demo.di.Car;
+import cn.xxy.demo.di.DiJavaCollection;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,7 +10,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class MainApp {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+//        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("autowire.xml");
         /*HelloWorld helloWorld = (HelloWorld) context.getBean("helloWorld");
         helloWorld.getMessage();
         helloWorld.getMessageParent();*/
@@ -20,5 +21,10 @@ public class MainApp {
         context.registerShutdownHook();*/
         Car car = (Car)context.getBean("car");
         car.aa();
+        /*DiJavaCollection diCollection = (DiJavaCollection) context.getBean("diCollection");
+        diCollection.getCityList();
+        diCollection.getProvinceSet();
+        diCollection.getCountryMap();
+        diCollection.getPropPhone();*/
     }
 }

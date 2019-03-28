@@ -14,36 +14,39 @@
 
     <bean class="cn.xxy.demo.InitHelloWorld"/>-->
 
-    <bean id="engine" class="cn.xxy.demo.di_constructor.Engine"/>
-    <bean id="wheel" class="cn.xxy.demo.di_constructor.Wheel"/>
-    <bean id="car" class="cn.xxy.demo.di_constructor.Car">
-        <constructor-arg ref="engine"/><!--构造函数注入bean-->
-        <property name="wheel" ref="wheel"/><!--setter 方法注入bean-->
-        <!--传值到构造函数、setter 方法-->
-        <!--<constructor-arg type="java.lang.Integer" value="1"/>
+    <!--<bean id="engine" class="cn.xxy.demo.di.Engine"/>-->
+    <!--<bean id="wheel" class="cn.xxy.demo.di.Wheel"/>-->
+    <!--<bean id="car" class="cn.xxy.demo.di.Car">
+        <constructor-arg ref="engine"/>&lt;!&ndash;构造函数注入bean&ndash;&gt;
+        <property name="wheel" ref="wheel"/>&lt;!&ndash;setter 方法注入bean&ndash;&gt;
+        &lt;!&ndash;传值到构造函数、setter 方法&ndash;&gt;
+        &lt;!&ndash;<constructor-arg type="java.lang.Integer" value="1"/>
         <constructor-arg index="0" value="1"/>
-        <property name="aa" value="aa"/>-->
+        <property name="aa" value="aa"/>&ndash;&gt;
 
-    </bean>
+    </bean>-->
+
     <!--p-namespace 用法-->
-    <!--<bean id="car" class="cn.xxy.demo.di_constructor.Car" p:wheel-ref="wheel">
+    <!--<bean id="car" class="cn.xxy.demo.di.Car" p:wheel-ref="wheel">
         <constructor-arg ref="engine"/>
     </bean>-->
+
     <!--注入内部bean-->
-    <!--<bean id="car" class="cn.xxy.demo.di_constructor.Car" p:wheel-ref="wheel">
+    <!--<bean id="car" class="cn.xxy.demo.di.Car" p:wheel-ref="wheel">
         <property name="wheel">
-            <bean id="wheel" class="cn.xxy.demo.di_constructor.Wheel"/>
+            <bean id="wheel" class="cn.xxy.demo.di.Wheel"/>
         </property>
     </bean>-->
 
-    <bean id="" class="">
+    <!--注入集合-->
+    <!--<bean id="diCollection" class="cn.xxy.demo.di.DiJavaCollection">
         <property name="cityList">
             <list>
                 <value>北京</value>
                 <value>上海</value>
                 <value>上海</value>
                 <value>广州</value>
-                <!--<ref bean="xx"/>--><!--注入引用对象-->
+                &lt;!&ndash;<ref bean="xx"/>&ndash;&gt;&lt;!&ndash;注入引用对象&ndash;&gt;
             </list>
         </property>
         <property name="provinceSet">
@@ -52,9 +55,33 @@
                 <value>广西</value>
                 <value>河南</value>
                 <value>河南</value>
-                <!--<ref bean="xx"/>--><!--注入引用对象-->
+                &lt;!&ndash;<ref bean="xx"/>&ndash;&gt;&lt;!&ndash;注入引用对象&ndash;&gt;
             </set>
         </property>
+        <property name="countryMap">
+            <map>
+                <entry key="1" value="China"/>
+                <entry key="2" value="America"/>
+                <entry key="3" value="England"/>
+                <entry key="4" value="Germany"/>
+                <entry key="5" value="France"/>
+                &lt;!&ndash;<entry key="5" value-ref="xx"/>&ndash;&gt;&lt;!&ndash;注入引用对象&ndash;&gt;
+            </map>
+        </property>
+        <property name="propPhone">
+            <props>
+                <prop key="one">Hua Wei</prop>
+                <prop key="two">IPhone</prop>
+                <prop key="three">Xiao Mi</prop>
+            </props>
+        </property>
+    </bean>-->
 
-    </bean>
+    <!--传入空字符串和null-->
+    <!--<bean id="xx" class="xx">
+        <property name="xx" value=""/>
+        <property name="xx"><null/></property>
+    </bean>-->
+
+
 </beans>
