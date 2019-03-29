@@ -7,6 +7,7 @@ public class Car {
 
     private Engine engine;
     private Wheel wheel;
+    private DiJavaCollection d;
 
     /*public Car(Double price) {
         System.out.println(price);
@@ -25,7 +26,6 @@ public class Car {
         this.engine = engine;
         this.wheel = wheel;
     }*/
-
     public Wheel getWheel() {
         return wheel;
     }
@@ -33,6 +33,11 @@ public class Car {
     public void setWheel(Wheel wheel) {
         System.out.println("set wheel");
         this.wheel = wheel;
+    }
+
+    public void setWheel1(DiJavaCollection dd) {
+        System.out.println("set wheel111");
+        this.d = dd;
     }
 
     public Engine getEngine() {

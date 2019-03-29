@@ -4,7 +4,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="engine" class="cn.xxy.demo.di.Engine"/>
-    <bean id="wheel" class="cn.xxy.demo.di.Wheel"/>
-    <bean id="car" autowire="byName" class="cn.xxy.demo.di.Car"/>
+    <bean id="wheel" class="cn.xxy.demo.di.DiJavaCollection"/>
+    <!--通过byName由属性名称指定自动装配
+        原理：根据已经autowire属性指定装配模式的bean的field的setter方法的方法名去掉set后的首写字母小写与其他已定义的bean的id/name属性进行匹配，如果匹配就DI。
+        (注：byName的自动装配跟set方法名和参数类型有关，跟属性名无关)
+    -->
+    <!--<bean id="car" autowire="byName" class="cn.xxy.demo.di.Car"/>-->
+    <!--通过byType由属性类型指定自动装配
+        原理：根据已经autowire属性指定装配模式的bean的field的setter方法的参数类型与其他已定义的bean的class属性的类名进行匹配，如果匹配就DI。
+        (注：byType自动装配与方法名无关，与属性名无关，与set方法的参数类型有关)
+    -->
+    <bean id="car" class="cn.xxy.demo.di.Car" autowire="byType"/>
 
 </beans>
