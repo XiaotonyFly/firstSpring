@@ -9,23 +9,23 @@ public class Car {
     private Wheel wheel;
     private DiJavaCollection d;
 
-    /*public Car(Double price) {
+    public Car(Double price) {
         System.out.println(price);
-    }*/
+    }
 
-    /*public Car(Engine engine) {
+    public Car(Engine engine) {
         System.out.println("My car ...");
         this.engine = engine;
-    }*/
+    }
 
     /*public Car(Wheel wheel) {
         this.wheel = wheel;
     }*/
 
-    /*public Car(Engine engine, Wheel wheel) {
+    public Car(Engine engine, Wheel wheel) {
         this.engine = engine;
         this.wheel = wheel;
-    }*/
+    }
     public Wheel getWheel() {
         return wheel;
     }
@@ -45,6 +45,7 @@ public class Car {
     }
 
     public void setEngine(Engine engine) {
+        System.out.println("engine");
         this.engine = engine;
     }
 
